@@ -102,7 +102,10 @@ js/main.js
 2.3 部署服务
 
 将项目fork到自己的仓库，不想fork,新建都行；
-参考Leancloud的[云引擎Git部署文档](https://leancloud.cn/docs/leanengine_quickstart.html),几个配置，简简单单。
+
+参考Leancloud的[云引擎Git部署文档](https://leancloud.cn/docs/leanengine_quickstart.html)。
+
+配置Action的环境变量，官方使用到了Action部署，部署很简单，看官方文档即可(我的配置详见文件`.github/workflows/main.yml`)
 
 
 #### 鸣谢原作者
