@@ -1,0 +1,40 @@
+#header-icon {
+    font-size: 32px;
+    // vertical-align: bottom;
+}
+
+#header-text {
+    line-height: 58px;
+    // vertical-align: middle;
+}
+
+footer {
+    min-height: 20rem;
+    margin-top: 5rem;
+    background: rgb(248, 249, 250);
+    overflow: hidden;
+
+    &>div {
+
+        &>div {
+            margin: 2rem 0 0 0;
+        }
+    }
+
+    #foottext {
+        line-height: 30px;
+        font-size: 13px;
+
+        img {
+            height: 12px;
+        }
+    }
+}
+
+.links {
+
+    a {
+
+        color: #fff;
+    }
+}

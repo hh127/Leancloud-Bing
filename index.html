@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日一图 - 领略世界之美</title>
+    <link href="lib/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/LiteraturePro/Assets@3.0/bing/lib/progressive-image.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_2042758_2fi5tvz8vl4.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css">
+	<style>
+	/*底部页脚*/
+	.github-badge {
+	  display: inline-block;
+	  border-radius: 2px;
+	  text-shadow: none;
+	  font-size: 12px;
+	  color: #fff;
+	  line-height: 15px;
+	  background-color: #abbac3;
+	  margin-bottom: 3px
+	}
+
+	.github-badge .badge-subject {
+	  display: inline-block;
+	  background-color: #4d4d4d;
+	  padding: 4px 4px 4px 6px;
+	  border-top-left-radius: 4px;
+	  border-bottom-left-radius: 4px
+	}
+
+	.github-badge .badge-value {
+	  display: inline-block;
+	  padding: 4px 6px 4px 4px;
+	  border-top-right-radius: 4px;
+	  border-bottom-right-radius: 4px
+	}
+
+	.github-badge .bg-blue {
+	  background-color: #007ec6
+	}
+
+	.github-badge .bg-orange {
+	  background-color: #ff9f18
+	}
+	.github-badge .bg-lit {
+	  background-color: #99FF33
+	}
+
+	.github-badge .bg-red {
+	  background-color: #FF3366
+	}
+
+	.github-badge .bg-green {
+	  background-color: #00c787
+	}
+
+	.github-badge .bg-purple {
+	  background-color: #ab34e9
+	}
+	.github-badge .bg-yellow {
+		background-color: #D8B024 !important;
+	}
+	.github-badge .bg-blueviolet {
+		background-color: #9933FF !important;
+	}
+	.github-badge .bg-pink {
+		background-color: #F26BAE !important;
+	}
+	.github-badge .bg-lightgrey {
+		background-color: #9F9F9F !important;
+	}
+	.github-badge .bg-gray {
+		background-color: #555 !important;
+	}
+	.github-badge .bg-lightgray {
+		background-color: #9f9f9f !important;
+	}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a id="header-text" class="navbar-brand align-middle" href="index.html"> <i id="header-icon"
+                class="iconfont icon-Bing align-bottom"></i> <strong>每日一图</strong> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">text</a>
+                </li>
+            </ul> -->
+
+            <div class="col align-self-end">
+                <div class="progress row" style="width: 13.2rem">
+                    <div id="js-progress" class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 0%;"
+                        aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">25%</div>
+					</div>
+					<div class="row">
+						<span>离下次图片更新还有&nbsp;&nbsp;</span>
+						<span id="h"></span>:
+						<span id="m"></span>:
+						<span id="s"></span>
+					</div>
+            </div>
+
+            <nav class="navbar-light bg-light mr-auto">
+                <form class="form-inline">
+                    <button id="btnToday" class="btn btn-sm btn-info" type="button">
+                        下载今日壁纸 <span class="badge badge-light">HD</span>
+                    </button>
+                </form>
+            </nav>
+
+            <ul class="navbar-nav">
+
+                <!-- <li class="nav-item active">
+                    <a class="nav-link" href="#">主页 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        About
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="https://github.com/LiteraturePro/Bing"><i
+                                class="iconfont icon-github"></i>GitHub</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="https://www.wxiou.cn"><i
+                                class="iconfont icon-guanyu"></i>wxiou.cn</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">领略世界之美</a>
+                </li>
+            </ul>
+
+            <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+        </div>
+    </nav>
+
+    <!-- 轮播图 -->
+    <div id="carouselExampleCaptions" class="container carousel slide" data-ride="carousel" width="1920px">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div id="carousel-js" class="carousel-item active">
+                <div class="progressive">
+                    <img data-src="https://bing-api.avosapps.us/api/?day=0" src="https://bing-api.avosapps.us/api/?day=0&thumbnail=1"
+                        class="d-block w-100 rounded preview lazy" alt="bing">
+                </div>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5></h5>
+                    <p></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://bing-api.avosapps.us/api/?day=1" class="d-block w-100 rounded" alt="bing">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5></h5>
+                    <p></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://bing-api.avosapps.us/api/?day=2" class="d-block w-100 rounded" alt="bing">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5></h5>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- 标题 -->
+    <div id="pic-tit" class="container align-middle">
+        <h4><strong>往日图片</strong> <span class="badge badge-info">HD</span></h4>
+    </div>
+
+    <!-- 图片 -->
+    <div class="container" id="pic-list">
+
+        <div id="pic-js" class="row text-center justify-content-between">
+            <div id="pic-js-son0" data-day="0" class="pic-item my-3 shadow-sm rounded">
+                <div class="progressive">
+                    <img class="rounded img-fluid preview lazy" data-src="https://bing-api.avosapps.us/api/?thumbnail=25&day=0"
+                        src="https://bing-api.avosapps.us/api/?thumbnail=1&day=0" alt="">
+                </div>
+                <p class="my-2"></p>
+            </div>
+            <div id="pic-js-son1" data-day="1" class="pic-item my-3 shadow-sm rounded">
+                <div class="progressive">
+                    <img class="rounded img-fluid preview lazy" data-src="https://bing-api.avosapps.us/api/?thumbnail=25&day=1"
+                        src="https://bing-api.avosapps.us/api/?thumbnail=1&day=1" alt="">
+                </div>
+                <p class="my-2"></p>
+            </div>
+            <div id="pic-js-son2" data-day="2" class="pic-item my-3 shadow-sm rounded">
+                <div class="progressive">
+                    <img class="rounded img-fluid preview lazy" data-src="https://bing-api.avosapps.us/api/?thumbnail=25&day=2"
+                        src="https://bing-api.avosapps.us/api/?thumbnail=1&day=2" alt="">
+                </div>
+                <p class="my-2"></p>
+            </div>
+            <div id="pic-js-son3" data-day="3" class="pic-item my-3 shadow-sm rounded">
+                <div class="progressive">
+                    <img class="rounded img-fluid preview lazy" data-src="https://bing-api.avosapps.us/api/?thumbnail=25&day=3"
+                        src="https://bing-api.avosapps.us/api/?thumbnail=1&day=3" alt="">
+                </div>
+                <p class="my-2"></p>
+            </div>
+            <div id="pic-js-son4" data-day="4" class="pic-item my-3 shadow-sm rounded">
+                <div class="progressive">
+                    <img class="rounded img-fluid preview lazy" data-src="https://bing-api.avosapps.us/api/?thumbnail=25&day=4"
+                        src="https://bing-api.avosapps.us/api/?thumbnail=1&day=4" alt="">
+                </div>
+                <p class="my-2"></p>
+            </div>
+            <div id="pic-js-son5" data-day="5" class="pic-item my-3 shadow-sm rounded">
+                <div class="progressive">
+                    <img class="rounded img-fluid preview lazy" data-src="https://bing-api.avosapps.us/api/?thumbnail=25&day=5"
+                        src="https://bing-api.avosapps.us/api/?thumbnail=1&day=5" alt="">
+                </div>
+                <p class="my-2"></p>
+            </div>
+            <div id="pic-js-son6" data-day="6" class="pic-item my-3 shadow-sm rounded">
+                <div class="progressive">
+                    <img class="rounded img-fluid preview lazy" data-src="https://bing-api.avosapps.us/api/?thumbnail=25&day=6"
+                        src="https://bing-api.avosapps.us/api/?thumbnail=1&day=6" alt="">
+                </div>
+                <p class="my-2"></p>
+            </div>
+            <div id="pic-js-son7" data-day="7" class="pic-item my-3 shadow-sm rounded">
+                <div class="progressive">
+                    <img class="rounded img-fluid preview lazy" data-src="https://bing-api.avosapps.us/api/?thumbnail=25&day=7"
+                        src="https://bing-api.avosapps.us/api/?thumbnail=1&day=7" alt="">
+                </div>
+                <p class="my-2"></p>
+            </div>
+            <div id="pic-js-son8" data-day="8" class="pic-item my-3 shadow-sm rounded">
+                <div class="progressive">
+                    <img class="rounded img-fluid preview lazy" data-src="https://bing-api.avosapps.us/api/?thumbnail=25&day=8"
+                        src="https://bing-api.avosapps.us/api/?thumbnail=1&day=8" alt="">
+                </div>
+                <p class="my-2"></p>
+            </div>
+            <div id="pic-js-son9" data-day="9" class="pic-item my-3 shadow-sm rounded">
+                <div class="progressive">
+                    <img class="rounded img-fluid preview lazy" data-src="https://bing-api.avosapps.us/api/?thumbnail=25&day=9"
+                        src="https://bing-api.avosapps.us/api/?thumbnail=1&day=9" alt="">
+                </div>
+                <p class="my-2"></p>
+            </div>
+            <div id="pic-js-son10" data-day="10" class="pic-item my-3 shadow-sm rounded">
+                <div class="progressive">
+                    <img class="rounded img-fluid preview lazy"
+                        data-src="https://bing-api.avosapps.us/api/?thumbnail=25&day=10"
+                        src="https://bing-api.avosapps.us/api/?thumbnail=1&day=10" alt="">
+                </div>
+                <p class="my-2"></p>
+            </div>
+            <div id="pic-js-son11" data-day="11" class="pic-item my-3 shadow-sm rounded">
+                <div class="progressive">
+                    <img class="rounded img-fluid preview lazy"
+                        data-src="https://bing-api.avosapps.us/api/?thumbnail=25&day=11"
+                        src="https://bing-api.avosapps.us/api/?thumbnail=1&day=11" alt="">
+                </div>
+                <p class="my-2"></p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="container-fluid">
+        <div class="container">
+			<div class="center">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<div class="github-badge">
+					<a href="http://www.beian.miit.gov.cn" rel="nofollow" target="_blank">
+						<span class="badge-subject"><font color=ffffff>2021 Copyright</span><span class="badge-value bg-blue">wxiou.cn</span>
+					</a>
+				</div>
+				<div class="github-badge">
+					<a href="http://www.beian.miit.gov.cn" rel="nofollow" target="_blank">
+						<span class="badge-subject"><font color=ffffff>黔ICP备</span>
+						<span class="badge-value bg-pink">19007604号</span>
+					</a>
+				</div>
+
+				<div class="github-badge">
+					<a href="https://console.upyun.com/register/?invite=ByG1JARJw" rel="nofollow" target="_blank">
+						<span class="badge-subject"><font color=ffffff>CDN</span>
+					</a>
+						<span class="badge-value bg-success">又拍云</span>		
+				</div>
+				<div class="github-badge">
+					<a href="https://console.upyun.com/register/?invite=ByG1JARJw" rel="nofollow" target="_blank">
+						<span class="badge-subject"><font color=ffffff>Pic</span>
+					</a>
+						<span class="badge-value bg-red">又拍云</span>
+				</div>
+				<div class="github-badge">
+					<a target="_blank" href="https://www.aliyun.com/minisite/goods?userCode=w1qepxjq">
+						<span class="badge-subject"><font color=ffffff>Host</span>
+					</a>
+						<span class="badge-value bg-blueviolet">阿里云</span>
+				</div>
+				<div class="github-badge">
+					<a href="https://url.cn/1MSos7sX" rel="nofollow" target="_blank">
+						<span class="badge-subject"><font color=ffffff>OSS</span>
+					</a>
+						<span class="badge-value bg-lit">腾讯云</span>
+				</div>
+				<div class="github-badge">
+					<a href="https://console.upyun.com/register/?invite=ByG1JARJw" target="_blank">
+						<span class="badge-subject"><font color=ffffff>本网站由又拍云</span>
+					</a>
+					<span class="badge-value bg-orange">提供CDN加速/云存储服务</span>
+				</div>
+				<a target="_blank" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"
+                        class="text-secondary">
+                        <img src="https://pcdn.wxiou.cn//20200725164203.png" alt="" style="width:30px; height: 30;" class="align-middle">
+                    </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 旧版 IE 升级提示弹窗代码 -->
+    <script>
+        /*@cc_on 
+        var _iealwn = {once: 3, outver: 10};
+        document.write('\x3Cscript id="_iealwn_js" src="https://support.dmeng.net/ie-alert-warning/latest.js">\x3C/script>'); 
+        @*/
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/LiteraturePro/Assets@3.0/bing/lib/jquery-1.11.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/LiteraturePro/Assets@3.0/bing/lib/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/LiteraturePro/Assets@3.0/bing/lib/progressive-image.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/LiteraturePro/Assets@3.0/bing/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/LiteraturePro/Assets@3.0/bing/js/index.js"></script>
+</body>
+
+</html>
