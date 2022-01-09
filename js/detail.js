@@ -42,8 +42,8 @@ $(".bigimg-text").empty().append(`<span class="badge badge-secondary">${imgSubDa
 //评论系统
 new Valine({
     el: '#vcomments',
-    appId: '',
-    appKey: '',
+    appId: 'Ov68qr4EpytDFeGnIkfrBMzX-MdYXbMMI',
+    appKey: 'nuL5bekxW1zvTWGs2vGcJooV',
     path: `${imgSubDate}` //不同图片加载不同的评论
 })
 
